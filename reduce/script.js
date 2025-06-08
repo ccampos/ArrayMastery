@@ -157,3 +157,54 @@ const voteTally = votes.reduce(
 );
 
 console.log('Vote Tally:', voteTally);
+
+// === Exercise 10: Create a Comma-Separated String ===
+const names = ['Alice', 'Bob', 'Charlie', 'David'];
+
+// TODO: Use reduce to create a single string like "Alice, Bob, Charlie, David"
+const nameList = names.reduce(
+  (accumulator, name, index) => {
+    if (index === 0) return accumulator + name
+    else return accumulator + ', ' + name;
+  },
+  ''
+);
+
+console.log('Name List:', nameList);
+
+
+// === Exercise 11: Count Characters in a Sentence (excluding spaces) ===
+const sentence = "JavaScript is powerful";
+
+// TODO: Use reduce to count how many characters (excluding spaces)
+const characterCount = sentence.split('').reduce(
+  (accumulator, character) => {
+    if (character === ' ') return accumulator;
+
+    accumulator++;
+
+    return accumulator;
+  },
+  0
+);
+
+console.log('Character Count:', characterCount);
+
+
+// === Exercise 12: Build a Lookup Table from Objects ===
+const items = [
+  { id: 'a1', value: 10 },
+  { id: 'b2', value: 20 },
+  { id: 'c3', value: 30 }
+];
+
+// TODO: Use reduce to create an object like { a1: 10, b2: 20, c3: 30 }
+const lookupTable = items.reduce(
+  (accumulator, item) => {
+    accumulator[item.id] = item.value;
+    return accumulator;
+  },
+  {}
+);
+
+console.log('Lookup Table:', lookupTable);
